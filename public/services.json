@@ -1,0 +1,23 @@
+[
+    {
+        "id": "624abe65b392ffd06ce41bb5",
+        "img": "./services/tax.jpg",
+        "name": "Taxation",
+        "price": 1000,
+        "description": "Take the guesswork out of your taxes. Planning throughout the year means you know where you're headed, and have made the most of potential tax savings."
+    },
+    {
+        "id": "624abe6521f88af1d4a97969",
+        "img": "./services/accounting.jpg",
+        "name": "Outsourced Accounting",
+        "price": 2000,
+        "description": "Ensure you have a accurate, and bulletproof set of financials for your business. We’ll make sure everyone is paid and take care of your complex payroll filings across all states."
+    },
+    {
+        "id": "624abe6590115ddeee6161f6",
+        "img": "./services/advisory.jpg",
+        "name": "Advisory",
+        "price": 3000,
+        "description": "Need to know how to incorporate? What your obligations are? Exercising stock options? Let us help you remove the guess work."
+    }
+]
