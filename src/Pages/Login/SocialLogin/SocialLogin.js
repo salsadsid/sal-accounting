@@ -3,12 +3,17 @@ import google from '../../../images/social/google.png'
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../Loading/Loading';
 
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const navigate = useNavigate()
+    const errorMessage = <p className='text-danger text-center'>{error?.message}</p>
     if (user) {
         navigate('/home');
+    }
+    if (loading) {
+        return <Loading></Loading>
     }
     return (
         <div>
@@ -19,6 +24,7 @@ const SocialLogin = () => {
                 <div style={{ height: "2px" }} className='bg-secondary w-50 opacity-50'></div>
             </div>
             <div>
+                {errorMessage}
                 <button onClick={() => signInWithGoogle()}
                     className='btn btn-dark w-50 d-block mx-auto my-2'>
                     <img src={google} alt="" />

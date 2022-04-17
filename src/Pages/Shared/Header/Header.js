@@ -7,7 +7,7 @@ import auth from '../../../firebase.init';
 
 import './Header.css'
 const Header = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     const handleSignOut = () => {
         signOut(auth);
     }
@@ -21,10 +21,10 @@ const Header = () => {
                         <Nav className="me-auto">
                             <Nav.Link href="home#services">Services</Nav.Link>
                             <Nav.Link href="home#capabilities">Capabilities</Nav.Link>
-                            <Nav.Link href="#pricing">Blogs</Nav.Link>
-                            <Nav.Link href="#deets">About</Nav.Link>
                         </Nav>
                         <Nav>
+                            <Nav.Link href="#pricing">Blogs</Nav.Link>
+                            <Nav.Link href="#deets">About</Nav.Link>
                             {user ?
                                 <button onClick={handleSignOut} className='btn btn-link text-decoration-none text-white'>Sign out</button>
                                 :
