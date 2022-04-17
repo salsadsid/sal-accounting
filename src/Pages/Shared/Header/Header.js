@@ -6,17 +6,18 @@ import './Header.css'
 const Header = () => {
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar sticky='top' collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to='/' className='fw-bold'>SAL ACCOUNTING</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#features">Services</Nav.Link>
+                            <Nav.Link href="home#services">Services</Nav.Link>
+                            <Nav.Link href="home#capabilities">Capabilities</Nav.Link>
                             <Nav.Link href="#pricing">Blogs</Nav.Link>
+                            <Nav.Link href="#deets">About</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">About</Nav.Link>
                             <Nav.Link as={Link} to='/login'>
                                 Login
                             </Nav.Link>
