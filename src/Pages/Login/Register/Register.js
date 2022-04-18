@@ -11,11 +11,13 @@ const Register = () => {
         createUserWithEmailAndPassword,
         user,
         loading,
+        error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const emailRef = useRef('');
     const passwordRef = useRef('')
     const nameRef = useRef('')
     const navigate = useNavigate()
+    const errorMessage = <p className='text-danger text-center'>{error?.message}</p>
     if (user) {
         navigate('/home')
     }
@@ -51,7 +53,7 @@ const Register = () => {
 
                         <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                     </Form.Group>
-
+                    {errorMessage}
                     <Button className='w-50 mx-auto d-block' variant="dark" type="submit">
                         Register
                     </Button>
