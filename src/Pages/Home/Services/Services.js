@@ -4,12 +4,13 @@ import Service from '../Service/Service';
 const Services = () => {
     const [services, setServices] = useState([])
 
+    // fetch data from services.json
     useEffect(() => {
         fetch("services.json")
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
-    console.log(services)
+
     return (
         <div className='container'>
             <h1 className='text-center my-4'>Services</h1>

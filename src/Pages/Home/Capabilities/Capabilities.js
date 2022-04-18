@@ -8,7 +8,7 @@ import criticalthinking from '../../../images/capabilities/criticalthinker.jpg'
 import './Capabilities.css'
 const Capabilities = () => {
     return (
-        <div id='capabilities' className='container'>
+        <div id='capabilities' className='container my-4'>
             <h1 className='text-center my-4'>Capabilities</h1>
             <div className='row row-cols-1 row-cols-md-3 capabilities-container g-3'>
                 <div className="col">
