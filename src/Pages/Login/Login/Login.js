@@ -41,9 +41,6 @@ const Login = () => {
             await sendPasswordResetEmail(email);
             toast("Sent Mail");
         }
-        else {
-            toast("Email");
-        }
     }
     return (
         <div className='w-50 mx-auto'>

@@ -11,7 +11,7 @@ const Service = ({ service }) => {
                     <h3 className="card-title">{name}</h3>
                     <h5><small>starting from </small>$<span className='fw-bold'></span>{price}</h5>
                     <p className="card-text">{description}</p>
-                    <Link to='/checkout' class="btn btn-dark">Check out</Link>
+                    <Link to='/checkout' className="btn btn-dark">Check out</Link>
                 </div>
             </div>
         </div>

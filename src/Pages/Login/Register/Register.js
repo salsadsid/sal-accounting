@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from '../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
@@ -10,8 +11,7 @@ const Register = () => {
         createUserWithEmailAndPassword,
         user,
         loading,
-        error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const emailRef = useRef('');
     const passwordRef = useRef('')
     const nameRef = useRef('')
@@ -19,11 +19,16 @@ const Register = () => {
     if (user) {
         navigate('/home')
     }
-    const handleRegister = event => {
+    if (loading) {
+        return <Loading></Loading>
+    }
+    const handleRegister = async event => {
         event.preventDefault()
+        const name = nameRef.current.value
         const email = emailRef.current.value
         const password = passwordRef.current.value
-        createUserWithEmailAndPassword(email, password)
+        await createUserWithEmailAndPassword(email, password)
+        console.log(name);
     }
     return (
         <div className='w-50 mx-auto'>
