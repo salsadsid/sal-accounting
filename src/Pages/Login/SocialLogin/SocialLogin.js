@@ -23,10 +23,10 @@ const SocialLogin = () => {
                 <p className='fw-bolder mt-2 px-3'>OR</p>
                 <div style={{ height: "2px" }} className='bg-secondary w-50 opacity-50'></div>
             </div>
-            <div>
+            <div >
                 {errorMessage}
                 <button onClick={() => signInWithGoogle()}
-                    className='btn btn-dark w-50 d-block mx-auto my-2'>
+                    className='btn btn-dark d-block mx-auto my-2'>
                     <img src={google} alt="" />
                     <span className='px-2 fw-bold'>Google Sign In</span>
                 </button>

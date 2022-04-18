@@ -31,31 +31,34 @@ const Register = () => {
         console.log(name);
     }
     return (
-        <div className='w-50 mx-auto'>
-            <h2 className='text-center text-dark mt-3'>Please Register</h2>
-            <Form onSubmit={handleRegister} className='w-100'>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+        <div className='container my-4'>
+            <div className="row">
 
-                    <Form.Control ref={nameRef} type="text" placeholder="Your Name" />
+                <Form onSubmit={handleRegister} className='col-10 col-md-6 mx-auto special p-3'>
+                    <h2 className='text-center text-dark my-3'>Please Register</h2>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
 
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Control ref={nameRef} type="text" placeholder="Your Name" />
 
-                    <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
 
-                </Form.Group>
+                        <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    </Form.Group>
 
-                    <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
-                </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
 
-                <Button className='w-50 mx-auto d-block' variant="dark" type="submit">
-                    Register
-                </Button>
-                <p className='mt-3'>Already an account? <Link to='/login' className='text-success text-decoration-none' >Please Login!</Link></p>
-            </Form>
-            <SocialLogin></SocialLogin>
+                        <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
+                    </Form.Group>
+
+                    <Button className='w-50 mx-auto d-block' variant="dark" type="submit">
+                        Register
+                    </Button>
+                    <p className='mt-3'>Already an account? <Link to='/login' className='text-success text-decoration-none' >Please Login!</Link></p>
+                    <SocialLogin></SocialLogin>
+                </Form>
+            </div>
         </div>
     );
 };

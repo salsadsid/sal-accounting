@@ -7,6 +7,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import Loading from '../Loading/Loading';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './Login.css'
 const Login = () => {
     const [
         signInWithEmailAndPassword,
@@ -20,7 +21,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const errorMessage = <p className='text-danger text-center'>{error?.message}</p>
-    let from = location.state?.from?.pathname || "/";
+    let from = location?.state?.from?.pathname || "/";
     if (user) {
         navigate(from, { replace: true });
     }
@@ -41,30 +42,37 @@ const Login = () => {
             await sendPasswordResetEmail(email);
             toast("Sent Mail");
         }
+        if (!email) {
+            toast("Please Enter A Valid Email");
+        }
     }
     return (
-        <div className='w-50 mx-auto'>
-            <h2 className='text-center text-dark mt-3'>Please Login</h2>
-            <Form onSubmit={handleLogin} className='w-100'>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+        <div className='container my-4'>
+            <div className="row">
 
-                    <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
+                <Form onSubmit={handleLogin} className='col-10 col-md-6 mx-auto special p-3'>
+                    <h2 className='text-center my-3'>Please Login</h2>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
 
-                </Form.Group>
+                        <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    </Form.Group>
 
-                    <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
-                </Form.Group>
-                {errorMessage}
-                <Button className='w-50 mx-auto d-block' variant="dark" type="submit">
-                    Login
-                </Button>
-                <p className='mt-3'>New To Sal Accounting? <Link to='/register' className='text-success text-decoration-none' >Please Register!</Link></p>
-                <p className='mt-3'>Forget Password? <button className='text-success text-decoration-none btn btn-link' onClick={resetPassword}>Reset Password!</button></p>
-                <ToastContainer />
-            </Form>
-            <SocialLogin></SocialLogin>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+
+                        <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
+                    </Form.Group>
+                    {errorMessage}
+                    <Button className='w-50 mx-auto d-block' variant="dark" type="submit">
+                        Login
+                    </Button>
+                    <p className='mt-3'>New To Sal Accounting? <Link to='/register' className='text-success text-decoration-none' >Please Register!</Link></p>
+                    <p className='mt-3'>Forget Password? <button className='text-success text-decoration-none btn btn-link' onClick={resetPassword}>Reset Password!</button></p>
+                    <ToastContainer />
+                    <SocialLogin></SocialLogin>
+                </Form>
+
+            </div>
         </div>
     );
 };

@@ -9,7 +9,7 @@ import './Capabilities.css'
 const Capabilities = () => {
     return (
         <div id='capabilities' className='container'>
-            <h1 className='text-center my-4'>My Capabilities</h1>
+            <h1 className='text-center my-4'>Capabilities</h1>
             <div className='row row-cols-1 row-cols-md-3 capabilities-container g-3'>
                 <div className="col">
                     <div className='border border-2 d-flex flex-column align-items-center justify-content-center rounded shadow-sm'>
