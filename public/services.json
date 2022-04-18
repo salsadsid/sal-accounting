@@ -10,14 +10,14 @@
         "id": "624abe6521f88af1d4a97969",
         "img": "./services/accounting.jpg",
         "name": "Outsourced Accounting",
-        "price": 2000,
+        "price": 1200,
         "description": "Ensure you have a accurate, and bulletproof set of financials for your business. We’ll make sure everyone is paid and take care of your complex payroll filings across all states."
     },
     {
         "id": "624abe6590115ddeee6161f6",
         "img": "./services/advisory.jpg",
         "name": "Advisory",
-        "price": 3000,
+        "price": 900,
         "description": "Need to know how to incorporate? What your obligations are? Exercising stock options? Let us help you remove the guess work."
     }
 ]
